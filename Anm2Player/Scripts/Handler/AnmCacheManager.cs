@@ -36,6 +36,7 @@ namespace Iamsleepingnow.Anm2Player
     }
 
     /// <summary>【Anm缓存管理器】</summary>
+    [AddComponentMenu("Anm2Player/Anm Cache Manager")]
     public class AnmCacheManager : AnmSingleton<AnmCacheManager>
     {
         /// <summary>【是否缓存文件引用】</summary>
@@ -209,4 +210,5 @@ namespace Iamsleepingnow.Anm2Player
             CacheFiles.Clear();
         }
     }
+
 }
