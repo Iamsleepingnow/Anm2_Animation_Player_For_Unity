@@ -103,6 +103,18 @@ Unity测试版本为`2022.3.43f1c1`，尚未测试其他版本引擎。 | Unity 
 ![](./ReadmePics/Anm2_Readme_015.jpg)
 
 
+## 关于Anm2动画编辑器 | About Anm2 Animation Editor
+
+Anm2 Animation Editor本体v1.0是由Adrian Gavrilita进行开发的，用于PC游戏《以撒的结合：重生》内部实体动画的编辑。 | Anm2 Animation Editor v1.0 is developed by Adrian Gavrilita for editing internal entity animations in the PC game: the Binding of Isaac: Rebirth.
+
+当在Steam上安装了《以撒的结合：重生》与DLC“Afterbirth”及“Afterbirth+”后，可在游戏安装目录中的`tools/ResourceExtractor/`找到`ResourceExtractor.exe`进行游戏解包。 | After installing the Binding of Isaac: Rebirth with the DLC "Afterbirth" and "Afterbirth+", you can find `ResourceExtractor.exe` in the game installation directory's `tools/ResourceExtractor/` folder to unpack the game.
+
+在游戏安装目录中的`extracted_resources/resources/gfx`路径中可以找到游戏所使用的anm2动画配置文件。 | The anm2 animation configuration files used by the game can be found in the path `extracted_resources/resources/gfx` within the game installation directory.
+
+可以将这些配置文件使用之前`tools`文件夹中的`IsaacAnimationEditor/`路径里的动画编辑器进行编辑。 | These configuration files can be edited using the `IsaacAnimationEditor/` located at the path in the `tools` folder.
+
+你也可以使用民间开发的Anm2动画编辑器更新版本进行编辑：[Anm2Ed](https://github.com/ShweetsStuff/anm2ed) | You can also use the civilian-developed Anm2 animation editor updated version for editing: [Anm2Ed](https://github.com/ShweetsStuff/anm2ed)
+
 
 ## 版权声明 | Copyright Notice
 
