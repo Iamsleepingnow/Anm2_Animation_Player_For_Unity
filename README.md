@@ -1,6 +1,6 @@
-# Anm2_Animation_Player_For_Unity
+# Anm2 Animation Player For Unity
 
-本仓库是我为以撒Anm2动画导入到Unity引擎中而制作的兼容小工具。
+本仓库是我为以撒Anm2动画导入到Unity引擎中而制作的兼容小工具。  
 This repository is a compatibility utility I made for importing Isaac's Anm2 animations into the Unity engine.
 
 ## 版权声明 | Copyright Notice
