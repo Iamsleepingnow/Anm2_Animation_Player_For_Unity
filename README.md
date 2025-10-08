@@ -87,19 +87,19 @@ Unity测试版本为`2022.3.43f1c1`，尚未测试其他版本引擎。 | Unity 
 ## 演示场景 | Demo
 
 1. Demo1_SpriteDrive
-   － 代码驱动动画测试 | Code-driven animation testing
+   - 代码驱动动画测试 | Code-driven animation testing
 ![](./ReadmePics/Anm2_Readme_012.jpg)
 
 2. Demo2_Character
-   － 玩家角色动画测试 | Player character animation testing
+   - 玩家角色动画测试 | Player character animation testing
 ![](./ReadmePics/Anm2_Readme_013.jpg)
 
 3. Demo3_CPUPressure
-   － 大量动态实例化动画物体测试 | Massive dynamic instantiation animation objects test
+   - 大量动态实例化动画物体测试 | Massive dynamic instantiation animation objects test
 ![](./ReadmePics/Anm2_Readme_014.jpg)
 
 4. Demo4_CPUPressure2
-   － 大量静态（静帧）实例化动画物体测试 | Massive static (still frame) instantiation animation objects test
+   - 大量静态（静帧）实例化动画物体测试 | Massive static (still frame) instantiation animation objects test
 ![](./ReadmePics/Anm2_Readme_015.jpg)
 
 
