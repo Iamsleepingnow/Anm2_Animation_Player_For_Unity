@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6779395511965706444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6521125371759655527}
+  - component: {fileID: 6105124053692775071}
+  - component: {fileID: 6009589688663935699}
+  - component: {fileID: 9142110038589509209}
+  m_Layer: 0
+  m_Name: AnmManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6521125371759655527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779395511965706444}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6105124053692775071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779395511965706444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37244ea98af89704e8506326283863fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFrameRate: 30
+--- !u!114 &6009589688663935699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779395511965706444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be51466f2b3a4e45b1aff29d8f9b625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelSizePerMeter: 100
+  LayerSortingGap: 0.0001
+  defaultFrameDroppingLevels: {fileID: 11400000, guid: 2c120de181249d84db0fa0aad9c7d92c, type: 2}
+  anmHiddenMaterialTemp: {fileID: 2100000, guid: 98e2e09d7c02f8e42856df260c4cd2c9, type: 2}
+  anmSpriteMaterialTemp_LitTransparent: {fileID: 2100000, guid: e29d681370d975a42893d5c20c830fd9, type: 2}
+  anmSpriteMaterialTemp_LitOpaque: {fileID: 2100000, guid: 035dd4dd632297344888a9c67e984a49, type: 2}
+  anmSpriteMaterialTemp_UnlitTransparent: {fileID: 2100000, guid: 30215a04b6f89364c9c68f00713d6b95, type: 2}
+  anmSpriteMaterialTemp_UnlitOpaque: {fileID: 2100000, guid: 9ede7e37d513fbd419188784f40f313d, type: 2}
+  anmShaderRef_BaseMap: _BaseMap
+  anmShaderRef_CropData: _CropData
+  anmShaderRef_PivotOffset: _PivotOffset
+  anmShaderRef_ColorTint: _AnmColorTint
+  anmShaderRef_ColorOffset: _AnmColorOffset
+  anmShaderRef_IsVisible: _ISVISIBLE
+--- !u!114 &9142110038589509209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779395511965706444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b35a6f00a0c5df488f615f452024d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheFileReference: 1
+  readFileReference: 1
+  autoCacheOnAwake: 1
+  autoCachePaths: []
+  autoCacheFilesRaw: []
+  autoCacheFiles: []

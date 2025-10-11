@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &317413904131412110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6857031573343804273}
+  - component: {fileID: 9180341952641666719}
+  m_Layer: 0
+  m_Name: AnmSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6857031573343804273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317413904131412110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9180341952641666719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317413904131412110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783b0916a44767148be512ea43d7274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerName: 
+  LayerId: -1
+  autoLoadOnAwake: 1
+  autoPlay: 0
+  autoPlayDelayFrames: 1
+  autoCache: 0
+  autoLoadFilePathType: 0
+  autoLoadFilePath: .\Sample.anm2
+  autoLoadAnmFile: {fileID: 0}
+  autoFindLayers: 0
+  autoLoadShaderQuality: 0
+  autoLoadAnimationIndex: -1
+  autoLoadStartFrame: 0
+  playBackSpeed: 1
+  isReversed: 0
+  isPaused: 1
+  useFrameDroppingLevels: 0
+  frameRate: 0
+  jumpFrames: 0
+  frameDroppingLevels: {fileID: 0}
+  frameDroppingLevel: 0
+  LoadedSpriteSheets: []
+  SpawnedRootLayer: {fileID: 0}
+  SpawnedSpriteLayers: []
+  SpawnedNullLayers: []
+  OnFileLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFrameUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnimationStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnimationCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnimationChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFrameIndexChanged:
+    m_PersistentCalls:
+      m_Calls: []
