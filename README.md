@@ -4,6 +4,8 @@
 
 本仓库是我为以撒Anm2动画导入到Unity引擎中而制作的兼容小工具。 | This repository is a compatibility utility I made for importing Isaac's Anm2 animations into the Unity engine.
 
+![](./ReadmePics/Anm2_Readme_000.jpg)
+
 目前已经完善了基础功能，可以以二维独立游戏动画播放器的形式使用。 | The basic functions have been completed and can be used as a 2D inde game animation player.
 
 ![](./ReadmePics/Anm2_Readme_001.png)
@@ -60,20 +62,25 @@ Unity测试版本为`2022.3.43f1c1`，尚未测试其他版本引擎。 | Unity 
 	- 当`AnmSprite`的`AutoLoadFilePath`为`Component`时，可以以`AutoLoadAnmFile`来设置项目中的文件。 | When `AnmSprite`'s `AutoLoadFilePath` is set to `Component`, you can use `AutoLoadAnmFile` to set the file in the project.
 ![](./ReadmePics/Anm2_Readme_007.png)
 
-3. `AnmRootLayerRuntime`
-	- Anm动画的根图层组件 | Anm animation's root layer component
-	- 用于设置根图层。 | Set the root layer.
+3. `AnmFrameDroppingLevels`
+	- Anm跳帧等级表 | Anm frame dropping levels config
+	- 当`AnmSprite`的`UseFrameDroppingLevels`为`true`时，可以以`FrameDroppingLevel`来设置等级配置表。 | When `UseFrameDroppingLevels` of `AnmSprite` is `true`, the frame dropping level can be set via the `FrameDroppingLevel` configuration table.
 ![](./ReadmePics/Anm2_Readme_008.png)
 
-4. `AnmSpriteLayerRuntime`
-	- Anm动画的图集图层组件 | Anm animation's sprite sheet layer component
-	- 用于设置图集图层。 | Set the sprite sheet layer.
+4. `AnmRootLayerRuntime`
+	- Anm动画的根图层组件 | Anm animation's root layer component
+	- 用于设置根图层。 | Set the root layer.
 ![](./ReadmePics/Anm2_Readme_009.png)
 
-5. `AnmNullLayerRuntime`
+5. `AnmSpriteLayerRuntime`
+	- Anm动画的图集图层组件 | Anm animation's sprite sheet layer component
+	- 用于设置图集图层。 | Set the sprite sheet layer.
+![](./ReadmePics/Anm2_Readme_010.png)
+
+6. `AnmNullLayerRuntime`
 	- Anm动画的空图层组件 | Anm animation's null layer component
 	- 用于设置空图层。 | Set the null layer.
-![](./ReadmePics/Anm2_Readme_010.png)
+![](./ReadmePics/Anm2_Readme_011.png)
 
 
 ### 测试 | Test
@@ -81,26 +88,30 @@ Unity测试版本为`2022.3.43f1c1`，尚未测试其他版本引擎。 | Unity 
 1. `AnmDebug`
 	- Anm文件解析测试组件 | Anm File Parsing Test Component
 	- 可以尝试解析Anm2文件中的数据。 | You can try parsing data from Anm2 files.
-![](./ReadmePics/Anm2_Readme_011.png)
+![](./ReadmePics/Anm2_Readme_012.png)
 
 
 ## 演示场景 | Demo
 
 1. Demo1_SpriteDrive
    - 代码驱动动画测试 | Code-driven animation testing
-![](./ReadmePics/Anm2_Readme_012.jpg)
+   - 在该场景中，展示了多种不同的动画播放方法，还有一套完整播放流程的代码控制演示。 | This scene demonstrates various different animation playback methods and a complete playback process code control example.
+![](./ReadmePics/Anm2_Demo_001.jpg)
 
 2. Demo2_Character
    - 玩家角色动画测试 | Player character animation testing
-![](./ReadmePics/Anm2_Readme_013.jpg)
+   - 通过使用角色控制器的方式来控制动画的播放，并展示了与Unity原生Animator动画状态机的兼容。 | Controlling animation playback through a role controller and demonstrating compatibility with Unity's native Animator state machine.
+![](./ReadmePics/Anm2_Demo_002.jpg)
 
 3. Demo3_CPUPressure
    - 大量动态实例化动画物体测试 | Massive dynamic instantiation animation objects test
-![](./ReadmePics/Anm2_Readme_014.jpg)
+   - 对比使用预热缓存功能前后的物体生成速度。 | Compare the object generation speed before and after using the preheating cache feature.
+![](./ReadmePics/Anm2_Demo_003.jpg)
 
 4. Demo4_CPUPressure2
    - 大量静态（静帧）实例化动画物体测试 | Massive static (still frame) instantiation animation objects test
-![](./ReadmePics/Anm2_Readme_015.jpg)
+   - 对比不同着色器对运行速度的影响。 | Comparing the impact of different shaders on performance.
+![](./ReadmePics/Anm2_Demo_004.jpg)
 
 
 ## 关于Anm2动画编辑器 | About Anm2 Animation Editor
