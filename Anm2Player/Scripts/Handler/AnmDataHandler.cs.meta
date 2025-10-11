@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4be51466f2b3a4e45b1aff29d8f9b625
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rectMesh: {fileID: -9016698406574131863, guid: ac01e224acf0e374caaa335091d64ae7, type: 3}
+  - anmHiddenShader: {fileID: 4800000, guid: bc3a73fff3f5b414a90b89680d0f9ee8, type: 3}
+  - anmSpriteShader: {fileID: -6465566751694194690, guid: af85921aacc28aa4cb0da304d4f27b45, type: 3}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 34231355ddc09a44e88da43be3e86705, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
