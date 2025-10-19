@@ -132,6 +132,10 @@ Anm2 Animation Editor本体v1.0是由Adrian Gavrilita进行开发的，用于PC�
 本项目为原始档案，作者：Iamsleepingnow。日期：2025.10.08。  
 This project is the original archive, developed by "Iamsleepingnow". Date: Oct. 8th, 2025
 
+Bilibili: [_Iamsleepingnow](https://space.bilibili.com/411375988)
+
+![](./.ReadmePics/Anm2_Watermark.png)
+
 
 ## 许可证 | License
 
