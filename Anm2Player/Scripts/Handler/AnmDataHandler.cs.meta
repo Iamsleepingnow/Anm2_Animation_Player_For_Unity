@@ -4,9 +4,12 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - rectMesh: {fileID: -9016698406574131863, guid: ac01e224acf0e374caaa335091d64ae7, type: 3}
-  - anmHiddenShader: {fileID: 4800000, guid: bc3a73fff3f5b414a90b89680d0f9ee8, type: 3}
-  - anmSpriteShader: {fileID: -6465566751694194690, guid: af85921aacc28aa4cb0da304d4f27b45, type: 3}
+  - defaultFrameDroppingLevels: {fileID: 11400000, guid: 2c120de181249d84db0fa0aad9c7d92c, type: 2}
+  - anmHiddenMaterialTemp: {fileID: 2100000, guid: 98e2e09d7c02f8e42856df260c4cd2c9, type: 2}
+  - anmSpriteMaterialTemp_LitTransparent: {fileID: 2100000, guid: e29d681370d975a42893d5c20c830fd9, type: 2}
+  - anmSpriteMaterialTemp_LitOpaque: {fileID: 2100000, guid: 035dd4dd632297344888a9c67e984a49, type: 2}
+  - anmSpriteMaterialTemp_UnlitTransparent: {fileID: 2100000, guid: 30215a04b6f89364c9c68f00713d6b95, type: 2}
+  - anmSpriteMaterialTemp_UnlitOpaque: {fileID: 2100000, guid: 9ede7e37d513fbd419188784f40f313d, type: 2}
   executionOrder: 0
   icon: {fileID: 2800000, guid: 34231355ddc09a44e88da43be3e86705, type: 3}
   userData: 

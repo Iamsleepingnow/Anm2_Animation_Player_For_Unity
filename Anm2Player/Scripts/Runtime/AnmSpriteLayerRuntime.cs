@@ -31,13 +31,12 @@ namespace Iamsleepingnow.Anm2Player
         public Material SelfMeshMaterial {
             get {
                 if (selfMeshMaterial == null) {
-                    selfMeshMaterial = new(DataHandler.anmSpriteMaterialTemp_LitTransparent.shader);
+                    selfMeshMaterial = new(DataHandler.anmSpriteMaterialTemp_LitTransparent);
                 }
                 return selfMeshMaterial;
             }
         }
         private Material selfMeshMaterial = null;
-
 
         /// <summary>【显示状态】Is visible</summary>
         [ShowNativeProperty]
@@ -137,7 +136,7 @@ namespace Iamsleepingnow.Anm2Player
         /// <summary>【设置图层的渲染排序】Set frame ordering layer</summary>
         /// <param name="id">【渲染队列ID】Ordering layer ID</param>
         public AnmSpriteLayerRuntime SetLayerSortingId(int id) {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, id * -1 * DataHandler.LayerSortingGap);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, id * DataHandler.LayerSortingGap);
             return this;
         }
 

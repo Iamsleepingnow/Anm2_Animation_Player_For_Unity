@@ -32,7 +32,7 @@ namespace Iamsleepingnow.Anm2Player.Demos
         [BoxGroup("Settings 设置"), Range(0.001f, 1f)]
         [SerializeField] public float cameraFollowSpeed = 0.1f; // 相机跟随速度
         [BoxGroup("Settings 设置"), Range(0.01f, 1f)]
-        [SerializeField] public float inAirAnimSpeed = 0.45f; // 空中动画速度
+        [SerializeField] public float inAirAnimSpeed = 0.65f; // 空中动画速度
         [BoxGroup("Settings 设置")]
         [SerializeField] public float cameraOffsetY = 2.5f; // 相机Y轴偏移
         [BoxGroup("Settings 设置")]
@@ -47,7 +47,7 @@ namespace Iamsleepingnow.Anm2Player.Demos
             jumpForce = 3.5f;
             gravityForce = -16f;
             cameraFollowSpeed = 0.1f;
-            inAirAnimSpeed = 0.45f;
+            inAirAnimSpeed = 0.65f;
             cameraOffsetY = 2.5f;
             cameraOffsetZ = -3f;
             capsuleBaseHeight = 0.6f;

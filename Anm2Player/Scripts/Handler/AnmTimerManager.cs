@@ -57,6 +57,11 @@ namespace Iamsleepingnow.Anm2Player
             }
         }
 
+        protected override void OnDestroy() {
+            base.OnDestroy();
+            _animationComponents.Clear(); // 清空动画组件字典 | Clear animation components dictionary
+        }
+
         /// <summary>【更新所有动画】Update all animations</summary>
         /// <param name="deltaTime">【每帧的时长】duration seconds per frame</param>
         private void UpdateAnimations(float deltaTime) {
@@ -67,7 +72,7 @@ namespace Iamsleepingnow.Anm2Player
                 if (!data.isPaused) {
                     data.currentTime += deltaTime * data.speed;
                     if (data.currentTime >= data.frameDuration) {
-                        data.currentTime -= data.frameDuration;
+                        data.currentTime = 0.0f;
                         animatable.FrameUpdateEvaluate(true); // 更新动画帧 | Update animation frames
                     }
                 }

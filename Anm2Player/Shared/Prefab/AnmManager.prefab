@@ -62,6 +62,7 @@ MonoBehaviour:
   pixelSizePerMeter: 100
   LayerSortingGap: 0.0001
   defaultFrameDroppingLevels: {fileID: 11400000, guid: 2c120de181249d84db0fa0aad9c7d92c, type: 2}
+  anmSpriteShader_LitTransparent: {fileID: -6465566751694194690, guid: af85921aacc28aa4cb0da304d4f27b45, type: 3}
   anmHiddenMaterialTemp: {fileID: 2100000, guid: 98e2e09d7c02f8e42856df260c4cd2c9, type: 2}
   anmSpriteMaterialTemp_LitTransparent: {fileID: 2100000, guid: e29d681370d975a42893d5c20c830fd9, type: 2}
   anmSpriteMaterialTemp_LitOpaque: {fileID: 2100000, guid: 035dd4dd632297344888a9c67e984a49, type: 2}
@@ -72,7 +73,6 @@ MonoBehaviour:
   anmShaderRef_PivotOffset: _PivotOffset
   anmShaderRef_ColorTint: _AnmColorTint
   anmShaderRef_ColorOffset: _AnmColorOffset
-  anmShaderRef_IsVisible: _ISVISIBLE
 --- !u!114 &9142110038589509209
 MonoBehaviour:
   m_ObjectHideFlags: 0

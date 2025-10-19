@@ -375,7 +375,7 @@ namespace Iamsleepingnow.Anm2Player
         }
 
         void OnDestroy() {
-            AnmTimerManager.Ins.UnregisterAnmTimer(this); // 取消注册动画计时器 | Unregister animation timer
+            AnmTimerManager.Ins?.UnregisterAnmTimer(this); // 取消注册动画计时器 | Unregister animation timer
             OnFileLoaded.RemoveAllListeners(); // 移除所有监听器 | Remove all listeners
             OnFrameUpdate.RemoveAllListeners();
             OnEventTriggered.RemoveAllListeners();
@@ -832,9 +832,9 @@ namespace Iamsleepingnow.Anm2Player
                 Texture2D sheet = GetSpriteSheetById(CurrentAnmFile.Content.GetSpriteSheetIndexByLayerId(currentLayerAnimations[la].LayerId)); // 获取图集
                 for (int sl = 0; sl < SpawnedSpriteLayers.Count; sl++) {
                     if (SpawnedSpriteLayers[sl].LayerId == currentLayerAnimations[la].LayerId) {
-                        SpawnedSpriteLayers[sl].SetLayerFrameProperty(sheet, currentLayerAnimations[la]
-                            .GetFrameByFrameIndex(frameIndex), currentLayerAnimations[la].Visible, updateBounds)
-                            .SetMute((!currentLayerAnimations[la].Visible) || (currentLayerAnimations[la].AllFrames.Count <= 0)); // 获取图层帧数
+                        AnmLayerFrame currentFrameDesc = currentLayerAnimations[la].GetFrameByFrameIndex(frameIndex);
+                        SpawnedSpriteLayers[sl].SetLayerFrameProperty(sheet, currentFrameDesc, currentLayerAnimations[la].Visible && currentFrameDesc != null && currentFrameDesc.Visible, updateBounds)
+                            .SetMute(!(currentLayerAnimations[la].Visible && currentFrameDesc != null && currentFrameDesc.Visible && currentLayerAnimations[la].AllFrames.Count > 0)); // 获取图层帧数
                     }
                 }
             }
@@ -843,9 +843,9 @@ namespace Iamsleepingnow.Anm2Player
             for (int na = 0; na < currentNullAnimations.Count; na++) {
                 for (int sl = 0; sl < SpawnedNullLayers.Count; sl++) {
                     if (SpawnedNullLayers[sl].LayerId == currentNullAnimations[na].NullId) {
-                        SpawnedNullLayers[sl].SetFrameProperty(currentNullAnimations[na]
-                            .GetFrameByFrameIndex(frameIndex))
-                            .SetMute((!currentNullAnimations[na].Visible) || (currentNullAnimations[na].AllFrames.Count <= 0)); // 获取非图集图层帧数
+                        AnmFrame currentFrameDesc = currentNullAnimations[na].GetFrameByFrameIndex(frameIndex);
+                        SpawnedNullLayers[sl].SetFrameProperty(currentFrameDesc)
+                            .SetMute(!(currentNullAnimations[na].Visible && currentFrameDesc != null && currentFrameDesc.Visible && currentNullAnimations[na].AllFrames.Count > 0)); // 获取非图集图层帧数
                     }
                 }
             }
@@ -1117,48 +1117,32 @@ namespace Iamsleepingnow.Anm2Player
             if (CurrentAnmFile == null) return this;
             AnmAnimation currentAnimation = GetCurrentAnimationDesc(); // 获取当前动画片段
             // --- 图集图层顺序更新 ---
-            List<AnmLayer> contentLayers = CurrentAnmFile.Content.Layers; // 动画内容图层列表
             List<AnmLayerAnimation> currentAnimlayers = currentAnimation.LayerAnimations; // 当前动画的图集图层列表
             List<AnmLayerAnimation> reversedAnimLayers = new(); // 反向图集图层列表
             for (int i = currentAnimlayers.Count - 1; i >= 0; i--) {
                 reversedAnimLayers.Add(currentAnimlayers[i]);
             }
-            List<AnmLayer> sortedLayers = new(); // 根据currentAnimlayers的顺序进行重排序的contentLayers
-            foreach (AnmLayerAnimation layer in currentAnimlayers) {
-                AnmLayer contentLayer = contentLayers.Find(x => x.Id == layer.LayerId);
-                if (contentLayer != null) {
-                    sortedLayers.Add(contentLayer);
-                }
-            }
-            List<AnmSpriteLayerRuntime> childrenSpriteLayers = gameObject.GetComponentsInChildren<AnmSpriteLayerRuntime>().ToList(); // 获取子图层
+            List<AnmSpriteLayerRuntime> childrenSpriteLayers = gameObject.GetComponentsInChildren<AnmSpriteLayerRuntime>(true).ToList(); // 获取子图层
             // 根据reversedAnimLayers的ID顺序来对childrenSpriteLayers子图层的SiblingIndex进行排序
             for (int i = 0; i < reversedAnimLayers.Count; i++) {
                 AnmSpriteLayerRuntime spriteLayer = childrenSpriteLayers.Find(x => x.LayerId == reversedAnimLayers[i].LayerId);
                 if (spriteLayer != null) {
                     spriteLayer.transform.SetSiblingIndex(i);
-                    spriteLayer.SetLayerSortingId(reversedAnimLayers.Count - 1 - i);
+                    spriteLayer.SetLayerSortingId(i);
                 }
             }
             // --- 非图集图层顺序更新 ---
-            List<AnmNull> contentNulls = CurrentAnmFile.Content.Nulls; // 动画内容非图集图层列表
             List<AnmNullAnimation> currentNullLayers = currentAnimation.NullAnimations; // 当前动画的非图集图层列表
             List<AnmNullAnimation> reversedNullLayers = new(); // 反向非图集图层列表
             for (int i = currentNullLayers.Count - 1; i >= 0; i--) {
                 reversedNullLayers.Add(currentNullLayers[i]);
             }
-            List<AnmNull> sortedNulls = new(); // 根据currentNullLayers的顺序进行重排序的contentNulls
-            foreach (AnmNullAnimation layer in currentNullLayers) {
-                AnmNull contentLayer = contentNulls.Find(x => x.Id == layer.NullId);
-                if (contentLayer != null) {
-                    sortedNulls.Add(contentLayer);
-                }
-            }
-            List<AnmNullLayerRuntime> childrenNullLayers = gameObject.GetComponentsInChildren<AnmNullLayerRuntime>().ToList(); // 获取子非图层
+            List<AnmNullLayerRuntime> childrenNullLayers = gameObject.GetComponentsInChildren<AnmNullLayerRuntime>(true).ToList(); // 获取子非图层
             // 根据reversedNullLayers的ID顺序来对childrenNullLayers子非图层的SiblingIndex进行排序
             for (int i = 0; i < reversedNullLayers.Count; i++) {
                 AnmNullLayerRuntime nullLayer = childrenNullLayers.Find(x => x.LayerId == reversedNullLayers[i].NullId);
                 if (nullLayer != null) {
-                    nullLayer.transform.SetSiblingIndex(reversedNullLayers.Count - 1 - i + childrenSpriteLayers.Count);
+                    nullLayer.transform.SetSiblingIndex(i + reversedAnimLayers.Count);
                 }
             }
             return this;
@@ -1245,7 +1229,7 @@ namespace Iamsleepingnow.Anm2Player
             void setCurrentFrameIndex() {
                 if (!IsInitialized) return;
                 currentFrameIndex = frameIndex;
-                EvaluateCurrentFrame(false); // 刷新当前帧 | Refresh current frame
+                EvaluateCurrentFrame(true); // 刷新当前帧 | Refresh current frame
                 OnFrameIndexChanged.Invoke(currentFrameIndex);
             }
             // 延迟执行 | Delay

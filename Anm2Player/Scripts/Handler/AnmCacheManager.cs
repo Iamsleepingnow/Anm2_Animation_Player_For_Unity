@@ -70,7 +70,7 @@ namespace Iamsleepingnow.Anm2Player
         /// <summary>【缓存的动画文件】</summary>
         public Dictionary<string, AnmCache> CacheFiles = new();
 
-        void Awake() {
+        protected void Awake() {
             if (autoCacheOnAwake) {
                 PreCacheFiles(autoCachePaths);
                 PreCacheFiles(autoCacheFilesRaw);

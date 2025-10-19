@@ -1662,7 +1662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1822128565}
+  m_Father: {fileID: 1966744660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404298028
 GameObject:
@@ -3607,6 +3607,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897888990}
   m_CullTransparentMesh: 1
+--- !u!4 &916462818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+  m_PrefabInstance: {fileID: 1213103919862791598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &926419528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,6 +4528,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6105124053692775071, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+      propertyPath: maxFrameRate
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6521125371759655527, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4613,8 +4622,17 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 39e068209ba696f4aac6e0eb720b0640, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6521125371759655527, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 916462818}
+    - targetCorrespondingSourceObject: {fileID: 6521125371759655527, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 387727017}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6779395511965706444, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1966744656}
   m_SourcePrefab: {fileID: 100100000, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
 --- !u!1 &1142160376
 GameObject:
@@ -5444,8 +5462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 252.5, y: -260}
-  m_SizeDelta: {x: 465, y: 0}
+  m_AnchoredPosition: {x: 280, y: -260}
+  m_SizeDelta: {x: 520, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1315997828
 MonoBehaviour:
@@ -6675,7 +6693,7 @@ MonoBehaviour:
   autoLoadFilePathType: 0
   autoLoadFilePath: Anm2Player/Anm_CharacterTest.anm2
   autoLoadAnmFile: {fileID: 0}
-  autoFindLayers: 1
+  autoFindLayers: 0
   autoLoadShaderQuality: 0
   autoLoadAnimationIndex: 1
   autoLoadStartFrame: 0
@@ -7814,7 +7832,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 387727017}
   - {fileID: 1060235663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8251,7 +8268,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 360, y: 20}
+  m_SizeDelta: {x: 415, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948129679
 MonoBehaviour:
@@ -8298,7 +8315,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 324866599}
   m_Direction: 0
   m_MinValue: 0.1
-  m_MaxValue: 2
+  m_MaxValue: 4
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -8397,7 +8414,7 @@ MonoBehaviour:
   autoLoadFilePathType: 0
   autoLoadFilePath: Anm2Player/Anm_CharacterTest.anm2
   autoLoadAnmFile: {fileID: 0}
-  debugLog: 0
+  debugLog: 1
   printChinese: 0
   anmFileInfo: 
   anmFileContent: 
@@ -8433,6 +8450,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1966744651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6779395511965706444, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+  m_PrefabInstance: {fileID: 1139857107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1966744656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966744651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67837a871bcc47f4aaa2ebefca057c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: "*\u6CE8\uFF1AAnm Timer Manager\u4E2D\u7684Max Frame Rate Limit\u4F1A\u5F71\u54CD\u6240\u6709Anm
+    Sprite\u7EC4\u4EF6\u7684Playback speed\u901F\u5EA6\u8C03\u6574\u7684\u6700\u5927\u503C\u3002\r\n*Note:
+    The 'Max Frame Rate Limit' in 'Anm Timer Manager' affects the maximum 'playback
+    speed' adjustment for all 'Anm Sprite' components.\r\n\r\n\u4E3E\u4E2A\u4F8B\u5B50\uFF0C\u5047\u8BBE\u4E00\u4E2A\u5728Anm2\u6587\u4EF6\u4E2D\u8BBE\u7F6E\u4E3A30fps\u7684\u52A8\u753B\uFF0C\u5F53Limit\u9650\u5236\u4E3A60\u65F6\uFF0C\u5176Playback
+    speed\u7684\u4E0A\u9650\u4E3A60 / 30 = 2\u3002\r\nFor example, if an animation
+    set to 30fps in an Anm2 file has a 'Limit' of 60, its 'playback speed' maximum
+    is 60 / 30 = 2."
+  inEdit: 0
+--- !u!4 &1966744660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6521125371759655527, guid: 1a1505026fe126d438f5d149e7939c32, type: 3}
+  m_PrefabInstance: {fileID: 1139857107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004548060
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,6 +8987,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141414148}
   m_CullTransparentMesh: 1
+--- !u!1001 &1213103919862791598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1966744660}
+    m_Modifications:
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341094368831154825, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500778146730097491, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: nextScene
+      value: Demo2_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564829975500506433, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
+      propertyPath: m_Name
+      value: DemoSceneChanger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6e3e277d7d526048839ced2b60f2a71, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

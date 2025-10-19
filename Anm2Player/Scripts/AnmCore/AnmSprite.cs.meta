@@ -3,7 +3,10 @@ guid: 783b0916a44767148be512ea43d7274b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - autoLoadAnmFile: {instanceID: 0}
+  - frameDroppingLevels: {fileID: 11400000, guid: 2c120de181249d84db0fa0aad9c7d92c, type: 2}
+  - SpawnedRootLayer: {instanceID: 0}
   executionOrder: 0
   icon: {fileID: 2800000, guid: 79aaed74e84e50849a080a746699bd4c, type: 3}
   userData: 
