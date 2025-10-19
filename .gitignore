@@ -24,7 +24,9 @@
 /Test.meta
 /Scenes.meta
 /LICENSE
+/LICENSE.meta
 /README.md
+/README.md.meta
 /.editorconfig
 /.gitignore
 /UniversalRenderPipelineGlobalSettings.asset
