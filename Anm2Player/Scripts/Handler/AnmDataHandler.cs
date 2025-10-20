@@ -53,8 +53,6 @@ namespace Iamsleepingnow.Anm2Player
         [BoxGroup("Global 全局")]
         [SerializeField] public AnmFrameDroppingLevels defaultFrameDroppingLevels = null; // 默认弃帧等级表 | Default frame dropping levels
 
-        [SerializeField] public Shader anmSpriteShader_LitTransparent = null;
-
         [Tooltip("\nAnmSprite的图集图层网格初始化时所使用的材质模板\nMesh material template of sprite sheet layers when init in AnmSprite\n")]
         [BoxGroup("Material Template 材质模板"), Label("Hidden Material")]
         [SerializeField] public Material anmHiddenMaterialTemp = null; // Anm动画播放器的渲染器隐藏使用的材质模板 | Material template used by Anm animation player hidden
