@@ -33,8 +33,6 @@ namespace Iamsleepingnow.Anm2Player.Demos
         [SerializeField] public AnmFileRuntime anmFileRuntime = null;
         private bool __isComponent => filePathType == AnmFilePathType.Component; // 是否为组件模式 | Is component mode
 
-        private bool canSpawn = true;
-
         void Start() {
             // 按钮：预缓存 | PreCache
             if (btn_PreCache != null) {
