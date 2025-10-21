@@ -119,9 +119,10 @@ namespace Iamsleepingnow.Anm2Player
             int loadIndex = 0;
             for (int p = 0; p < pathsTemp.Count; p++) {
                 if (pathsTemp[p].pathType != AnmFilePathType.Component) { // 当路径类型为组件时，则不进行缓存
+                    AnmCachePath cachePath = pathsTemp[p];
                     tempSprite.LoadAnmFile(pathsTemp[p].pathType, pathsTemp[p].path, false, out outFile, (anm, sheets) => {
                         if (outFile != null) {
-                            AddCacheFile(pathsTemp[p], outFile.Copy(), sheets);
+                            AddCacheFile(cachePath, outFile.Copy(), sheets);
                         }
                         loadIndex++;
                         if (loadIndex == pathsTemp.Count) {
