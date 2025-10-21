@@ -455,10 +455,10 @@ namespace Iamsleepingnow.Anm2Player
                     List<AnmSpritesheet> anmSpriteSheets = anmFile.Content.Spritesheets;
                     string anmFilesFolder = System.IO.Path.GetDirectoryName(path); // 获取文件所在目录 | Get the directory where the file is located
                     if (isAsync) {
-                        LoadAnmTexturesAsync(anmSpriteSheets, pathType, anmFilesFolder, _ => { onLoaded?.Invoke(this, LoadedSpriteSheets.Copy()); onLoaded = null; OnFileLoaded.Invoke(); });
+                        LoadAnmTexturesAsync(anmSpriteSheets, pathType, anmFilesFolder, _ => { onLoaded?.Invoke(this, LoadedSpriteSheets.Copy()); onLoaded = null; });
                     }
                     else {
-                        LoadAnmTextures(anmSpriteSheets, pathType, anmFilesFolder, _ => { onLoaded?.Invoke(this, LoadedSpriteSheets.Copy()); onLoaded = null; OnFileLoaded.Invoke(); });
+                        LoadAnmTextures(anmSpriteSheets, pathType, anmFilesFolder, _ => { onLoaded?.Invoke(this, LoadedSpriteSheets.Copy()); onLoaded = null; });
                     }
                 }
                 file = anmFile; return this;
@@ -782,15 +782,15 @@ namespace Iamsleepingnow.Anm2Player
                     bool isLoop = CurrentAnmFile.Animations.GetAnimationByName(GetCurrentAnimationName()).Loop;
                     if (currentFrameIndex >= currentAnimationFrameCount - 1) { // 当为最后一帧时 | When it's the last frame
                         OnAnimationStarted.Invoke(GetCurrentAnimationName(), GetCurrentAnimationIndex()); // 动画开始 | Animation started
-                        SetCurrentFrameIndex(isLoop ? 0 + JumpFrames : 0);
+                        SetCurrentFrameIndex(isLoop ? 0 + JumpFrames : 0, triggerEvent: false);
                     }
                     else if (currentFrameIndex < currentAnimationFrameCount - 1 - 1 - JumpFrames) { // 当前于倒数第二帧时 | When before the second-to-last frame
-                        SetCurrentFrameIndex(currentFrameIndex + 1 + JumpFrames);
+                        SetCurrentFrameIndex(currentFrameIndex + 1 + JumpFrames, triggerEvent: false);
                     }
                     else { // 当为倒数第二帧时 | When at the second-to-last frame
                         OnAnimationCompleted.Invoke(GetCurrentAnimationName(), GetCurrentAnimationIndex(), GetCurrentAnimationDesc().Loop); // 动画完成 | Animation completed
                         if (!isLoop) { Pause(); }
-                        SetCurrentFrameIndex(currentAnimationFrameCount - 1);
+                        SetCurrentFrameIndex(currentAnimationFrameCount - 1, triggerEvent: false);
                         if (!isLoop) { return; }
                     }
                 }
@@ -799,15 +799,15 @@ namespace Iamsleepingnow.Anm2Player
                     bool isLoop = CurrentAnmFile.Animations.GetAnimationByName(GetCurrentAnimationName()).Loop;
                     if (currentFrameIndex <= 0) { // 当为第一帧时 | When it's the first frame
                         OnAnimationStarted.Invoke(GetCurrentAnimationName(), GetCurrentAnimationIndex()); // 动画开始 | Animation started
-                        SetCurrentFrameIndex(isLoop ? currentAnimationFrameCount - 1 - JumpFrames : currentAnimationFrameCount - 1);
+                        SetCurrentFrameIndex(isLoop ? currentAnimationFrameCount - 1 - JumpFrames : currentAnimationFrameCount - 1, triggerEvent: false);
                     }
                     else if (currentFrameIndex > 0 + 1 + JumpFrames) { // 当后于第二帧时 | When after the second frame
-                        SetCurrentFrameIndex(currentFrameIndex - 1 - JumpFrames);
+                        SetCurrentFrameIndex(currentFrameIndex - 1 - JumpFrames, triggerEvent: false);
                     }
                     else { // 当第二帧时 | When the first frame
                         OnAnimationCompleted.Invoke(GetCurrentAnimationName(), GetCurrentAnimationIndex(), GetCurrentAnimationDesc().Loop); // 动画完成 | Animation completed
                         if (!isLoop) { Pause(); }
-                        SetCurrentFrameIndex(0);
+                        SetCurrentFrameIndex(0, triggerEvent: false);
                         if (!isLoop) { return; }
                     }
                 }
@@ -1225,12 +1225,13 @@ namespace Iamsleepingnow.Anm2Player
 
         /// <summary>【设置当前帧索引】Set frame index</summary>
         /// <param name="delayExecutionFrames">【延迟执行】Delay frames</param>
-        public AnmSprite SetCurrentFrameIndex(int frameIndex, int delayExecutionFrames = 0) {
+        public AnmSprite SetCurrentFrameIndex(int frameIndex, int delayExecutionFrames = 0, bool triggerEvent = true) {
             void setCurrentFrameIndex() {
                 if (!IsInitialized) return;
                 currentFrameIndex = frameIndex;
                 EvaluateCurrentFrame(true); // 刷新当前帧 | Refresh current frame
-                OnFrameIndexChanged.Invoke(currentFrameIndex);
+                if (triggerEvent)
+                    OnFrameIndexChanged.Invoke(currentFrameIndex);
             }
             // 延迟执行 | Delay
             if (delayExecutionFrames == 0) {
