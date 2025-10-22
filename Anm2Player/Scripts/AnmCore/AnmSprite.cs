@@ -362,6 +362,9 @@ namespace Iamsleepingnow.Anm2Player
                         });
                     }
                 }
+                if (useFrameDroppingLevels) {
+                    SetFrameDroppingLevel(frameDroppingLevel); // 设置帧等级 | Set frame dropping level
+                }
             }
             if (autoPlayDelayFrames <= 0) {
                 autoLoadAndPlay(); // 不延迟加载 | No delay loading
@@ -371,7 +374,6 @@ namespace Iamsleepingnow.Anm2Player
                     autoLoadAndPlay();
                 });
             }
-            SetFrameDroppingLevel(frameDroppingLevel); // 设置帧等级 | Set frame dropping level
         }
 
         void OnDestroy() {
